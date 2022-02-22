@@ -5,4 +5,3 @@ BroForce féle
 
 Felvehető fegyverek(ammo capacity),saját assetek és hangot, Választható karakterek, Többféle ellen, Felvehető tárgyak(hp & shield), Hp bar és ammo mennyiség.
 Valami kis story több pályával. 
-Nehézségi fokozat.
