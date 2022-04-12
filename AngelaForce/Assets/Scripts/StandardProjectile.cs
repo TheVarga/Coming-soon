@@ -24,7 +24,7 @@ public class StandardProjectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") || collision.CompareTag("PlayerProjectile")) return;
-        if (collision.CompareTag("Enemy")) {
+        if (collision.CompareTag("Enemy") || collision.CompareTag("DestroyableTerrain")) {
             Destroy(collision.gameObject);
         }
         
