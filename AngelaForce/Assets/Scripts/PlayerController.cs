@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        moveSpeed = 3f;
-        jumpForce = 30f;
+        moveSpeed = 2.5f;
+        jumpForce = 40f;
         isJumping = false;
         rb2D = gameObject.GetComponent<Rigidbody2D>();
     }

@@ -30,18 +30,35 @@ public class EnemyAI : MonoBehaviour
     {
 
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+                if (facingDirection == LEFT)
+                {
+                    ChangeFacingDirection(RIGHT);
+                }
+                else
+                {
+                    ChangeFacingDirection(LEFT);
+                }           
+        }
+        
+    }
+
     private void FixedUpdate()
     {
         float vX = moveSpeed;
 
-        if (facingDirection == LEFT) {
+        if (facingDirection == LEFT)
+        {
             vX = -moveSpeed;
         }
 
         rb2d.velocity = new Vector2(vX, rb2d.velocity.y);
 
 
-        if (IsHittingWall() /*|| isNearEdge()*/ )
+        if (IsHittingWall() || IsNearEdge())
         {
             if (facingDirection == LEFT)
             {
@@ -55,13 +72,15 @@ public class EnemyAI : MonoBehaviour
 
     }
 
-    void ChangeFacingDirection(string direction) {
+    void ChangeFacingDirection(string direction)
+    {
         Vector3 newScale = baseScale;
         if (direction == LEFT)
         {
             newScale.x = -baseScale.x;
         }
-        else {
+        else
+        {
             newScale.x = baseScale.x;
         }
         transform.localScale = newScale;
@@ -74,7 +93,8 @@ public class EnemyAI : MonoBehaviour
 
         float castDist = baseCastDistance;
         //define cast dist
-        if (facingDirection == LEFT) {
+        if (facingDirection == LEFT)
+        {
             castDist = -baseCastDistance;
         }
         //target destination based on cast distance
@@ -83,24 +103,26 @@ public class EnemyAI : MonoBehaviour
 
         //Debug.DrawLine(castPosition.position, targetPos, Color.red);
 
-        if (Physics2D.Linecast(castPosition.position, targetPos, 1 << LayerMask.NameToLayer("Platform"))) {
+        if (Physics2D.Linecast(castPosition.position, targetPos, 1 << LayerMask.NameToLayer("Platform")))
+        {
             val = true;
         }
         else val = false;
 
         return val;
     }
-    /*
-    bool isNearEdge() {
-        bool val = false;
+
+    bool IsNearEdge()
+    {
+        bool val = true;
 
         float castDist = baseCastDistance;
-        
+
         //target destination based on cast distance
         Vector3 targetPos = castPosition.position;
         targetPos.y -= castDist;
 
-        //Debug.DrawLine(castPosition.position, targetPos, Color.green);
+        // Debug.DrawLine(castPosition.position, targetPos, Color.green);
 
         if (Physics2D.Linecast(castPosition.position, targetPos, 1 << LayerMask.NameToLayer("Platform")))
         {
@@ -110,5 +132,5 @@ public class EnemyAI : MonoBehaviour
 
         return val;
     }
-    */
+
 }
