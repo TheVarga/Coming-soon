@@ -41,7 +41,7 @@ public class EnemyAI : MonoBehaviour
         rb2d.velocity = new Vector2(vX, rb2d.velocity.y);
 
 
-        if (IsHittingWall() /*|| isNearEdge()*/ )
+        if (IsHittingWall() || IsNearEdge() )
         {
             if (facingDirection == LEFT)
             {
@@ -90,9 +90,9 @@ public class EnemyAI : MonoBehaviour
 
         return val;
     }
-    /*
-    bool isNearEdge() {
-        bool val = false;
+    
+    bool IsNearEdge() {
+        bool val = true;
 
         float castDist = baseCastDistance;
         
@@ -100,7 +100,7 @@ public class EnemyAI : MonoBehaviour
         Vector3 targetPos = castPosition.position;
         targetPos.y -= castDist;
 
-        //Debug.DrawLine(castPosition.position, targetPos, Color.green);
+       // Debug.DrawLine(castPosition.position, targetPos, Color.green);
 
         if (Physics2D.Linecast(castPosition.position, targetPos, 1 << LayerMask.NameToLayer("Platform")))
         {
@@ -108,7 +108,8 @@ public class EnemyAI : MonoBehaviour
         }
         else val = true;
 
+       // Debug.Log(val);
         return val;
     }
-    */
+    
 }
