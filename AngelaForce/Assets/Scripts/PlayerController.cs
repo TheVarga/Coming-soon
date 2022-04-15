@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,8 @@ public class PlayerController : MonoBehaviour
         jumpForce = 50f;
         isJumping = false;
         rb2D = gameObject.GetComponent<Rigidbody2D>();
+        DontDestroyOnLoad(transform.root.gameObject);
+        //DontDestroyOnLoad(GameObject.FindWithTag("MainCamera"));
     }
 
     // Update is called once per frame
@@ -64,5 +67,15 @@ public class PlayerController : MonoBehaviour
         currentScale.x *= -1;
         gameObject.transform.localScale = currentScale;
         facingRight = !facingRight;
+    }
+    private void OnLevelWasLoaded(int level)
+    {
+        FindStartPosition();
+    }
+
+    private void FindStartPosition()
+    {
+       transform.position = GameObject.FindWithTag("StartPosition").transform.position;
+        
     }
 }
