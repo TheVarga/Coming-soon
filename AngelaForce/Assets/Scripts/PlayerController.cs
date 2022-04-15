@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb2D;
-
+    public float Health;
     private float moveSpeed;
     private float jumpForce;
     private bool isJumping;
@@ -29,7 +29,9 @@ public class PlayerController : MonoBehaviour
     {
         moveHorizontal = Input.GetAxisRaw("Horizontal");
         moveVertical = Input.GetAxisRaw("Vertical");
-        
+        if (Health <= 0) { 
+            Destroy(gameObject);
+        }
     }
 
     void FixedUpdate()

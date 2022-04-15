@@ -6,7 +6,8 @@ public class EnemyAI : MonoBehaviour
 {
     const string LEFT = "left";
     const string RIGHT = "right";
-
+    public float MaxHealth;
+    public float Health;
 
     [SerializeField]
     Transform castPosition;
@@ -28,7 +29,7 @@ public class EnemyAI : MonoBehaviour
     }
     void Update()
     {
-
+        if(Health <= 0) Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
