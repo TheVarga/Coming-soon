@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     private float moveHorizontal;
     private float moveVertical;
     bool facingRight = true;
+
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,9 @@ public class PlayerController : MonoBehaviour
         if (Health <= 0) { 
             Destroy(gameObject);
         }
+
+        animator.SetFloat("Run", Mathf.Abs(moveHorizontal));
+        animator.SetFloat("Jump", Mathf.Abs(moveVertical));
     }
 
     void FixedUpdate()
