@@ -19,7 +19,7 @@ public class StandardProjectile : MonoBehaviour
     }
     IEnumerator SelfDestruct()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         Destroy(gameObject);
     }
 

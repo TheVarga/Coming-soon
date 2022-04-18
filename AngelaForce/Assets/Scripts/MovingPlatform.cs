@@ -36,5 +36,6 @@ public class MovingPlatform : MonoBehaviour
     {
         if (sticky.Equals(true))
             collision.transform.SetParent(null);
+        DontDestroyOnLoad(collision.gameObject);
     }
 }

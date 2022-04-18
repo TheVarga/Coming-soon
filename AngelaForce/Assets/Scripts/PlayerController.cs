@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb2D;
+    public int Points;
     public float Health;
+    public float MaxHealth;
     private float moveSpeed;
     private float jumpForce;
     private bool isJumping;
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Points = 0;
         moveSpeed = 2.7f;
         jumpForce = 50f;
         isJumping = false;
@@ -33,6 +36,7 @@ public class PlayerController : MonoBehaviour
         moveVertical = Input.GetAxisRaw("Vertical");
         if (Health <= 0) { 
             Destroy(gameObject);
+            SceneManager.LoadScene(1);
         }
 
         animator.SetFloat("Run", Mathf.Abs(moveHorizontal));

@@ -8,12 +8,14 @@ public class EnemyAI : MonoBehaviour
     const string RIGHT = "right";
     public float MaxHealth;
     public float Health;
+    public float CollisionDamage;  
 
     [SerializeField]
     Transform castPosition;
 
     [SerializeField]
     float baseCastDistance;
+   
 
     string facingDirection;
 
@@ -30,6 +32,7 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         if(Health <= 0) Destroy(gameObject);
+       
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -46,11 +49,18 @@ public class EnemyAI : MonoBehaviour
         }
         
     }
-
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
+            playerController.Health -= CollisionDamage;
+        }
+    }
     private void FixedUpdate()
     {
         float vX = moveSpeed;
-
+        
         if (facingDirection == LEFT)
         {
             vX = -moveSpeed;
@@ -134,4 +144,5 @@ public class EnemyAI : MonoBehaviour
         return val;
     }
 
+    
 }
