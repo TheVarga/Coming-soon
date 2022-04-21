@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 8030364305189833511}
   - component: {fileID: 2850119414821411815}
   - component: {fileID: 2611029749307694300}
+  - component: {fileID: 52902581893283376}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -312,10 +313,8 @@ MonoBehaviour:
   MaxHealth: 100
   Health: 100
   CollisionDamage: 1
-  playerDetection: {fileID: 4859082764621115183}
   castPosition: {fileID: 8030364303345451935}
   baseCastDistance: 0.3
-  baseDetectionDistance: 1
 --- !u!61 &2850119414821411815
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -361,3 +360,43 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &52902581893283376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030364305189833504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.13819489, y: -0.3514446, z: 0}
+  - {x: 0.15964143, y: -0.33218038, z: 0}
+  - {x: 0.15010214, y: -0.2357302, z: 0}
+  - {x: 0.2787808, y: -0.2357302, z: 0}
+  - {x: 0.2907513, y: -0.11303554, z: 0}
+  - {x: 0.43439373, y: -0.11004291, z: 0}
+  - {x: 0.43140048, y: 0.021629, z: 0}
+  - {x: 0.17104991, y: 0.015643738, z: 0}
+  - {x: 0.1261611, y: -0.041214325, z: 0}
+  - {x: 0.12017584, y: 0.09045758, z: 0}
+  - {x: 0.19199769, y: 0.2131516, z: 0}
+  - {x: 0.14321788, y: 0.3204584, z: 0}
+  - {x: -0.14977504, y: 0.3241701, z: 0}
+  - {x: -0.19104879, y: 0.23409937, z: 0}
+  - {x: -0.19104752, y: 0.13534513, z: 0}
+  - {x: -0.15214524, y: 0.042576775, z: 0}
+  - {x: -0.19104879, y: -0.029244442, z: 0}
+  - {x: -0.17907827, y: -0.19383465, z: 0}
+  m_ShapePathHash: 320622944
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 36790

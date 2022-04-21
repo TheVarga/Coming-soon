@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6583948639534154480}
   - component: {fileID: 6583948639534154478}
   - component: {fileID: 6583948639534154479}
+  - component: {fileID: 5664735911947779169}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -182,6 +183,45 @@ MonoBehaviour:
   projectile: {fileID: 8466581891176790433, guid: df5b9da6f0904f345bb9e8780dcb4207, type: 3}
   shootingPoint: {fileID: 6583948640039744843}
   canShoot: 1
+--- !u!114 &5664735911947779169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6583948639534154484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.4953317, y: 0.23308457, z: 0}
+  - {x: -0.3460408, y: 0.13773713, z: 0}
+  - {x: -0.26584858, y: 0.15778427, z: 0}
+  - {x: -0.35940677, y: -0.036014173, z: 0}
+  - {x: -0.2591656, y: -0.20976546, z: 0}
+  - {x: -0.2123865, y: -0.29664066, z: 0}
+  - {x: -0.2123865, y: -0.48375702, z: 0}
+  - {x: 0.28816903, y: -0.48196775, z: 0}
+  - {x: 0.36232856, y: -0.40356392, z: 0}
+  - {x: 0.2487214, y: -0.28995767, z: 0}
+  - {x: 0.4425226, y: -0.13625443, z: 0}
+  - {x: 0.40910766, y: 0.07759206, z: 0}
+  - {x: 0.28213453, y: 0.057544008, z: 0}
+  - {x: 0.2019405, y: 0.17115024, z: 0}
+  - {x: 0.19460902, y: 0.48865023, z: 0}
+  - {x: -0.19461001, y: 0.48865023, z: 0}
+  - {x: -0.27921456, y: 0.35826752, z: 0}
+  m_ShapePathHash: -1933135584
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -103820
 --- !u!1 &6583948640039744842
 GameObject:
   m_ObjectHideFlags: 0

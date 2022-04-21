@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - DestroyableTerrain
   - StartPosition
+  - Trap
   layers:
   - Default
   - TransparentFX
