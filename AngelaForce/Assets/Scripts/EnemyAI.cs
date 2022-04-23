@@ -55,6 +55,7 @@ public class EnemyAI : MonoBehaviour
         {
             PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
             playerController.Health -= CollisionDamage;
+            
         }
     }
     private void FixedUpdate()

@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ShootingProjectile : MonoBehaviour
 {
+    public AudioSource gunSound;
+
     public GameObject projectile;
     public Transform shootingPoint;
     public bool canShoot = true;
@@ -10,6 +12,7 @@ public class ShootingProjectile : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
             Shoot();
+            gunSound.Play();
         }
     }
 

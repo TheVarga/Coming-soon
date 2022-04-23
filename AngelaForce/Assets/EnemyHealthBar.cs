@@ -15,6 +15,7 @@ public class EnemyHealthBar : MonoBehaviour
     {
         EnemyAI enemyAI = gameObject.GetComponentInParent<EnemyAI>();
         localScale.x = enemyAI.Health/enemyAI.MaxHealth/2;
+        
         transform.localScale = localScale;
     }
 }

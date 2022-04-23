@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
+    public AudioSource footsteps;
+    public AudioSource damageTaken;
     private Rigidbody2D rb2D;
     public int Points;
     public float Health;
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         moveHorizontal = Input.GetAxisRaw("Horizontal");
         moveVertical = Input.GetAxisRaw("Vertical");
         if (Health <= 0) { 
@@ -46,7 +49,8 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if (moveHorizontal > 0.1f || moveHorizontal < -0.1f) {
-            rb2D.AddForce(new Vector2(moveHorizontal * moveSpeed, 0f), ForceMode2D.Impulse);           
+            rb2D.AddForce(new Vector2(moveHorizontal * moveSpeed, 0f), ForceMode2D.Impulse);
+            if(!footsteps.isPlaying) footsteps.Play();   
         }
         if (!isJumping && moveVertical > 0.1f) {
             rb2D.AddForce(new Vector2(0f, moveVertical * jumpForce),ForceMode2D.Impulse);
@@ -89,4 +93,5 @@ public class PlayerController : MonoBehaviour
        transform.position = GameObject.FindWithTag("StartPosition").transform.position;
         
     }
+    
 }
