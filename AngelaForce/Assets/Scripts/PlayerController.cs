@@ -93,5 +93,8 @@ public class PlayerController : MonoBehaviour
        transform.position = GameObject.FindWithTag("StartPosition").transform.position;
         
     }
-    
+    public void TakeDamage(float damageValue)
+    {
+        Health -= damageValue;
+    }
 }

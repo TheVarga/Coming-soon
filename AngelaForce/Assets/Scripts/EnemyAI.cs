@@ -8,14 +8,22 @@ public class EnemyAI : MonoBehaviour
     const string RIGHT = "right";
     public float MaxHealth;
     public float Health;
-    public float CollisionDamage;  
+    public float CollisionDamage;
+    //Shooting
+    //public AudioSource gunSound;
+    private bool canShoot = true;
+    private int crLimit = 0;
+    public GameObject projectile;
+    public Transform shootingPoint;
+    [SerializeField] float TimeBetweenShots;
+    //
+    public LayerMask layermask;
 
-    [SerializeField]
-    Transform castPosition;
+    [SerializeField] Transform castPosition;
+    [SerializeField] float detectionDistance;
+    [SerializeField] float baseCastDistance;
 
-    [SerializeField]
-    float baseCastDistance;
-   
+    public GameObject DetectionPoint;
 
     string facingDirection;
 
@@ -31,23 +39,76 @@ public class EnemyAI : MonoBehaviour
     }
     void Update()
     {
-        if(Health <= 0) Destroy(gameObject);
-       
+        if (Health <= 0) Destroy(gameObject);
+        RaycastHit2D enemy;
+        if (facingDirection == LEFT) {
+            enemy = Physics2D.Raycast(DetectionPoint.transform.position, Vector2.right * new Vector2(-1, 0f), detectionDistance, layermask);
+            if (enemy.collider != null)
+            {
+                Debug.DrawRay(DetectionPoint.transform.position, Vector2.right * enemy.distance * new Vector2(-1, 0f), Color.red);
+                if (canShoot)
+                {
+                    Shoot();
+                    canShoot = false;
+                    ShootingDelay();
+                }            
+            }
+            else
+            {
+                Debug.DrawRay(DetectionPoint.transform.position, Vector2.right * detectionDistance * new Vector2(-1, 0f), Color.green);
+            }
+        }
+        else
+        {
+            enemy = Physics2D.Raycast(DetectionPoint.transform.position, Vector2.right * new Vector2(1, 0f), detectionDistance, layermask);
+            if (enemy.collider != null)
+            {
+                Debug.DrawRay(DetectionPoint.transform.position, Vector2.right * enemy.distance * new Vector2(1, 0f), Color.red);
+                if (canShoot)
+                {
+                    Shoot();
+                    canShoot = false;
+                    ShootingDelay();
+                }
+            }
+            else
+            {
+                Debug.DrawRay(DetectionPoint.transform.position, Vector2.right * detectionDistance * new Vector2(1, 0f), Color.green);
+            }
+
+        }
+
+
     }
+    private void ShootingDelay()
+    {
+        if (crLimit == 0) {
+            StartCoroutine(Delay());
+        }
+        
+    }
+    IEnumerator Delay()
+    {
+        crLimit++;
+        yield return new WaitForSeconds(TimeBetweenShots);
+        canShoot = true;
+        crLimit--;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-                if (facingDirection == LEFT)
-                {
-                    ChangeFacingDirection(RIGHT);
-                }
-                else
-                {
-                    ChangeFacingDirection(LEFT);
-                }           
+            if (facingDirection == LEFT)
+            {
+                ChangeFacingDirection(RIGHT);
+            }
+            else
+            {
+                ChangeFacingDirection(LEFT);
+            }
         }
-        
+
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -55,13 +116,13 @@ public class EnemyAI : MonoBehaviour
         {
             PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
             playerController.Health -= CollisionDamage;
-            
+
         }
     }
     private void FixedUpdate()
     {
         float vX = moveSpeed;
-        
+
         if (facingDirection == LEFT)
         {
             vX = -moveSpeed;
@@ -145,5 +206,18 @@ public class EnemyAI : MonoBehaviour
         return val;
     }
 
-    
+    void Shoot()
+    {
+        Debug.Log("ajjajj lõni kéne");
+        GameObject si = Instantiate(projectile, shootingPoint);
+        si.transform.parent = null;
+        
+        
+    }
+
+    public void TakeDamage(float damageValue) { 
+        Health -= damageValue;
+    }
+
+   
 }

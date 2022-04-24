@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6583948639534154478}
   - component: {fileID: 6583948639534154479}
   - component: {fileID: 5664735911947779169}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1801f8f97c4ee49b6dc9e2061552b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  footsteps: {fileID: 0}
+  damageTaken: {fileID: 0}
   Points: 0
   Health: 0
   MaxHealth: 0
@@ -180,8 +182,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55cc9957cb0e61c4a95b0c1e53101b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunSound: {fileID: 0}
   projectile: {fileID: 8466581891176790433, guid: df5b9da6f0904f345bb9e8780dcb4207, type: 3}
   shootingPoint: {fileID: 6583948640039744843}
+  TimeBetweenShots: 1
   canShoot: 1
 --- !u!114 &5664735911947779169
 MonoBehaviour:
@@ -221,7 +225,7 @@ MonoBehaviour:
   - {x: -0.27921456, y: 0.35826752, z: 0}
   m_ShapePathHash: -1933135584
   m_Mesh: {fileID: 0}
-  m_InstanceId: -103820
+  m_InstanceId: 133230
 --- !u!1 &6583948640039744842
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6583948640039744843}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

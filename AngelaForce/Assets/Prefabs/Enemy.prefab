@@ -1,5 +1,40 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1582993315369651841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5516256885021839426}
+  m_Layer: 0
+  m_Name: ShootingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5516256885021839426
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582993315369651841}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8030364305189833509}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.553, y: -0.046}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7567822840876959358
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +241,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7864632646195886476}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.178, y: 0.124, z: -0.08099788}
+  m_LocalPosition: {x: 0.548, y: 0.184, z: -0.08099788}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 1}
   m_Children: []
   m_Father: {fileID: 8030364305189833509}
@@ -285,6 +320,7 @@ RectTransform:
   - {fileID: 5800027521448732146}
   - {fileID: 4859082764621115183}
   - {fileID: 2873409730069945849}
+  - {fileID: 5516256885021839426}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -396,8 +432,16 @@ MonoBehaviour:
   MaxHealth: 100
   Health: 100
   CollisionDamage: 1
+  projectile: {fileID: 1643732753453167665, guid: 8d9e6f35c37c57048a78add504902825, type: 3}
+  shootingPoint: {fileID: 5516256885021839426}
+  TimeBetweenShots: 0.8
+  layermask:
+    serializedVersion: 2
+    m_Bits: 128
   castPosition: {fileID: 8030364303345451935}
+  detectionDistance: 4.3
   baseCastDistance: 0.3
+  DetectionPoint: {fileID: 7864632646195886476}
 --- !u!61 &2850119414821411815
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -482,4 +526,4 @@ MonoBehaviour:
   - {x: -0.17907827, y: -0.19383465, z: 0}
   m_ShapePathHash: 320622944
   m_Mesh: {fileID: 0}
-  m_InstanceId: 56584
+  m_InstanceId: 198702

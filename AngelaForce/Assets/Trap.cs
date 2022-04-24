@@ -11,7 +11,7 @@ public class Trap : MonoBehaviour
         {
             GameObject gameObject = collision.gameObject;
             PlayerController controller = gameObject.GetComponent<PlayerController>();
-            controller.Health -= TrapDamage/2;
+            controller.TakeDamage(TrapDamage / 2);
         }
     }
     

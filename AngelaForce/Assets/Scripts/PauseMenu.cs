@@ -37,6 +37,8 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
+        Destroy(GameObject.Find("Player"));
+        Destroy(GameObject.Find("Canvas"));
         SceneManager.LoadScene("Menu");
     }
 

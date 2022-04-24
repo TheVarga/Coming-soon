@@ -19,33 +19,31 @@ public class StandardProjectile : MonoBehaviour
     }
     IEnumerator SelfDestruct()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(0.2f);
         Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (dealtDamage == false)
-        {
-            if(collision.CompareTag("Player") || collision.CompareTag("PlayerProjectile")) return;
-            if (collision.CompareTag("DestroyableTerrain"))
-            {
-                Destroy(collision.gameObject);
-            }
-            if (collision.CompareTag("Enemy"))
-            {
-                dealtDamage = true;
-                GameObject enemyObject = collision.gameObject;
-                EnemyAI enemyStats = enemyObject.GetComponent<EnemyAI>();
-                enemyStats.Health -= damage;
-                Debug.Log("Hit: " + enemyStats.Health);
-            }
-        }
         
-
-
-
-        Destroy(gameObject);
+            if (dealtDamage == false)
+            {
+                if (collision.CompareTag("Player") || collision.CompareTag("PlayerProjectile")) return;
+                if (collision.CompareTag("DestroyableTerrain"))
+                {
+                    Destroy(collision.gameObject);
+                }
+                if (collision.CompareTag("Enemy"))
+                {
+                    dealtDamage = true;
+                    GameObject enemyObject = collision.gameObject;
+                    EnemyAI enemyStats = enemyObject.GetComponent<EnemyAI>();
+                    enemyStats.TakeDamage(damage);
+                    Debug.Log("Hit: " + enemyStats.Health);
+                }
+            }
+             Destroy(gameObject);
     }
-   
+
+
 }
