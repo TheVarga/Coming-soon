@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
         }
 
         animator.SetFloat("Run", Mathf.Abs(moveHorizontal));
-        animator.SetFloat("Jump", Mathf.Abs(moveVertical));
+        animator.SetFloat("Jump", moveVertical);
     }
 
     void FixedUpdate()
