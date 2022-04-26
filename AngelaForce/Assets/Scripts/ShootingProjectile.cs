@@ -14,8 +14,9 @@ public class ShootingProjectile : MonoBehaviour
         if (Input.GetKey(KeyCode.Space)) {
             if (canShoot)
             {
+                FindObjectOfType<AudioManager>().Play("gunfire");
                 Shoot();
-                gunSound.Play();
+               // gunSound.Play();
                 canShoot = false;
                 ShootingDelay();
             }          

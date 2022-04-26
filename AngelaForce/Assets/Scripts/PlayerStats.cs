@@ -14,11 +14,11 @@ public class PlayerStats : MonoBehaviour
     }
     void Update()
     {
-        GameObject playerObject = GameObject.Find("Player");
+        GameObject playerObject = GameObject.FindWithTag("Player");//GameObject.Find("Player");
         PlayerController playerController = playerObject.GetComponent<PlayerController>();
-        playerOne.text = "Player(1) health: "
+        playerOne.text = "Player health: "
             + playerController.Health.ToString() + "/"
-            + playerController.MaxHealth.ToString() + "<br>Player(1) points: " + playerController.Points;
+            + playerController.MaxHealth.ToString() + "<br>Player points: " + playerController.Points;
     }   
     
 }

@@ -11,6 +11,7 @@ TagManager:
   - StartPosition
   - Trap
   - EnemyProjectile
+  - Audio
   layers:
   - Default
   - TransparentFX

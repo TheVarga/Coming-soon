@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         DontDestroyOnLoad(transform.root.gameObject);
         //DontDestroyOnLoad(GameObject.FindWithTag("MainCamera"));
-    }
+            }
 
     // Update is called once per frame
     void Update()
@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
         moveHorizontal = Input.GetAxisRaw("Horizontal");
         moveVertical = Input.GetAxisRaw("Vertical");
+
         if (Health <= 0) { 
             Destroy(gameObject);
             SceneManager.LoadScene(1);
@@ -50,7 +51,10 @@ public class PlayerController : MonoBehaviour
     {
         if (moveHorizontal > 0.1f || moveHorizontal < -0.1f) {
             rb2D.AddForce(new Vector2(moveHorizontal * moveSpeed, 0f), ForceMode2D.Impulse);
-            if(!footsteps.isPlaying) footsteps.Play();   
+            // if(!footsteps.isPlaying) footsteps.Play();
+         
+                FindObjectOfType<AudioManager>().Play("footsteps");           
+
         }
         if (!isJumping && moveVertical > 0.1f) {
             rb2D.AddForce(new Vector2(0f, moveVertical * jumpForce),ForceMode2D.Impulse);

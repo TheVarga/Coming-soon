@@ -8,10 +8,13 @@ public class LevelChange : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player") { 
+        if (collision.gameObject.tag == "Player") {
+            DontDestroyOnLoad(GameObject.Find("Sounds"));
             LoadScene();
         }
     }
+
+   // if (collision.gameObject.name == "Player")
     void LoadScene() {
         SceneManager.LoadScene(LevelIndexToLoad);
     }
