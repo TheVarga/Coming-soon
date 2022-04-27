@@ -134,8 +134,9 @@ MonoBehaviour:
   footsteps: {fileID: 0}
   damageTaken: {fileID: 0}
   Points: 0
-  Health: 120
-  MaxHealth: 120
+  Health: 150
+  MaxHealth: 150
+  moveSpeed: 2.7
   animator: {fileID: 878576746881335562}
 --- !u!114 &5564386572687575406
 MonoBehaviour:

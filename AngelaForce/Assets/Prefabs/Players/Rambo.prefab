@@ -107,6 +107,7 @@ MonoBehaviour:
   Points: 0
   Health: 100
   MaxHealth: 100
+  moveSpeed: 3.2
   animator: {fileID: 8157626367526679388}
 --- !u!70 &8157626367625790252
 CapsuleCollider2D:
@@ -186,7 +187,7 @@ MonoBehaviour:
   gunSound: {fileID: 1395065589086142470, guid: 81109945a7e76334abe710f4080e8a89, type: 3}
   projectile: {fileID: 8466581891176790433, guid: df5b9da6f0904f345bb9e8780dcb4207, type: 3}
   shootingPoint: {fileID: 8157626368194491542}
-  TimeBetweenShots: 0.3
+  TimeBetweenShots: 0.2
   canShoot: 1
 --- !u!114 &7275135146571873724
 MonoBehaviour:
@@ -226,7 +227,7 @@ MonoBehaviour:
   - {x: -0.27921456, y: 0.35826752, z: 0}
   m_ShapePathHash: -1933135584
   m_Mesh: {fileID: 0}
-  m_InstanceId: -2690
+  m_InstanceId: 49506
 --- !u!95 &8157626367526679388
 Animator:
   serializedVersion: 3

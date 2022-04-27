@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public int Points;
     public float Health;
     public float MaxHealth;
-    private float moveSpeed;
+    public float moveSpeed;
     private float jumpForce;
     private bool isJumping;
     private float moveHorizontal;
@@ -23,13 +23,13 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         Points = 0;
-        moveSpeed = 2.7f;
+        //moveSpeed = 2.7f;
         jumpForce = 50f;
         isJumping = false;
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         DontDestroyOnLoad(transform.root.gameObject);
         //DontDestroyOnLoad(GameObject.FindWithTag("MainCamera"));
-            }
+    }
 
     // Update is called once per frame
     void Update()
@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
         if (Health <= 0) { 
             Destroy(gameObject);
             SceneManager.LoadScene(1);
+            
         }
 
         animator.SetFloat("Run", Mathf.Abs(moveHorizontal));
@@ -89,9 +90,9 @@ public class PlayerController : MonoBehaviour
     }
     private void OnLevelWasLoaded(int level)
     {
-        FindStartPosition();
+        if(level !=0) FindStartPosition();
     }
-
+    
     private void FindStartPosition()
     {
        transform.position = GameObject.FindWithTag("StartPosition").transform.position;
@@ -100,5 +101,9 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(float damageValue)
     {
         Health -= damageValue;
+    }
+    public void Heal(float healthValue)
+    {
+        Health += healthValue;
     }
 }
