@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private float moveHorizontal;
     private float moveVertical;
     bool facingRight = true;
+   // public HealthBar healthBar;
 
     public Animator animator;
     // Start is called before the first frame update
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
         isJumping = false;
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         DontDestroyOnLoad(transform.root.gameObject);
+       // healthBar.setMaxHealth(MaxHealth);
         //DontDestroyOnLoad(GameObject.FindWithTag("MainCamera"));
     }
 
@@ -46,6 +48,8 @@ public class PlayerController : MonoBehaviour
 
         animator.SetFloat("Run", Mathf.Abs(moveHorizontal));
         animator.SetFloat("Jump", moveVertical);
+
+       // healthBar.setHealth(Health);
     }
 
     void FixedUpdate()
@@ -101,9 +105,13 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(float damageValue)
     {
         Health -= damageValue;
+
+        //healthBar.setHealth(Health);
     }
     public void Heal(float healthValue)
     {
         Health += healthValue;
+
+      //  healthBar.setHealth(Health);
     }
 }

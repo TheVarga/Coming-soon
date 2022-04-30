@@ -136,7 +136,7 @@ MonoBehaviour:
   Points: 0
   Health: 150
   MaxHealth: 150
-  moveSpeed: 2.7
+  moveSpeed: 4
   animator: {fileID: 878576746881335562}
 --- !u!114 &5564386572687575406
 MonoBehaviour:
