@@ -5,12 +5,20 @@ using UnityEngine.SceneManagement;
 public class LevelChange : MonoBehaviour
 {
     public int LevelIndexToLoad;
+    public int NextLevelReq;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        PlayerController playerController = playerObject.GetComponent<PlayerController>();
         if (collision.gameObject.tag == "Player") {
-            DontDestroyOnLoad(GameObject.Find("Sounds"));
-            LoadScene();
+            if (playerController.Points >= NextLevelReq)
+            {
+                DontDestroyOnLoad(GameObject.Find("Sounds"));
+                DontDestroyOnLoad(GameObject.Find("Canvas"));
+
+                LoadScene();
+            }
         }
     }
 

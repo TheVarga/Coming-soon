@@ -184,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 150
   Health: 150
-  CollisionDamage: 1
+  CollisionDamage: 0.2
   projectile: {fileID: 1643732753453167665, guid: 8d9e6f35c37c57048a78add504902825, type: 3}
   shootingPoint: {fileID: 8253204548953428142}
   TimeBetweenShots: 0.4
@@ -292,7 +292,7 @@ MonoBehaviour:
   - {x: -0.24285057, y: -0.25341403, z: 0}
   m_ShapePathHash: -227545411
   m_Mesh: {fileID: 0}
-  m_InstanceId: 45792
+  m_InstanceId: 81520
 --- !u!1 &5869736707966124912
 GameObject:
   m_ObjectHideFlags: 0

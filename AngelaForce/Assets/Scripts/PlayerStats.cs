@@ -5,14 +5,18 @@ using TMPro;
 public class PlayerStats : MonoBehaviour
 {
     private TextMeshProUGUI playerOne;
+    //private TextMeshProUGUI playerPoint;
     public HealthBar hp;
 
 
     
     private void Start()
     {
-        playerOne = GameObject.Find("Player1Stats").GetComponent<TextMeshProUGUI>();
+         playerOne = GameObject.Find("PlayerStats").GetComponent<TextMeshProUGUI>();
+        // playerPoint = GameObject.Find("PlayerStats").GetComponent<TextMeshProUGUI>();
+       // playerOne = GameObject.FindWithTag("Player").GetComponent<TextMeshProUGUI>();
         DontDestroyOnLoad(GameObject.Find("Canvas"));
+        
 
         GameObject playerObject = GameObject.FindWithTag("Player");
         PlayerController playerController = playerObject.GetComponent<PlayerController>();
@@ -29,7 +33,8 @@ public class PlayerStats : MonoBehaviour
 
             hp.setHealth(set);
 
-           // playerOne.text = "Player points: " + playerController.Points;
+            playerOne.text = "<br><br>Player points: " + playerController.Points;
+            
             //"Player health: " 
             //  + playerController.Health.ToString() + "/"
             // + playerController.MaxHealth.ToString() + "<br>Player points: " + playerController.Points;

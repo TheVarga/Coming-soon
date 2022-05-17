@@ -29,7 +29,8 @@ public class PlayerController : MonoBehaviour
         isJumping = false;
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         DontDestroyOnLoad(transform.root.gameObject);
-       // healthBar.setMaxHealth(MaxHealth);
+        
+        // healthBar.setMaxHealth(MaxHealth);
         //DontDestroyOnLoad(GameObject.FindWithTag("MainCamera"));
     }
 

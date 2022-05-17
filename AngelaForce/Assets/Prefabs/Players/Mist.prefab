@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 1516860885752909415}
   - component: {fileID: 7597265136001593303}
   - component: {fileID: 4158455197608159086}
+  - component: {fileID: 2696392334829858192}
   m_Layer: 7
   m_Name: Mist
   m_TagString: Player
@@ -136,7 +137,7 @@ MonoBehaviour:
   Points: 0
   Health: 150
   MaxHealth: 150
-  moveSpeed: 4
+  moveSpeed: 3.2
   animator: {fileID: 878576746881335562}
 --- !u!114 &5564386572687575406
 MonoBehaviour:
@@ -151,9 +152,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunSound: {fileID: 0}
-  projectile: {fileID: 8466581891176790433, guid: df5b9da6f0904f345bb9e8780dcb4207, type: 3}
+  projectile: {fileID: 6803050315630728837, guid: 082cfa8db740bb74ab2db94cf134004b, type: 3}
   shootingPoint: {fileID: 2744766104003920934}
-  TimeBetweenShots: 0.3
+  TimeBetweenShots: 0.15
   canShoot: 1
 --- !u!95 &878576746881335562
 Animator:
@@ -237,3 +238,63 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.34152943, y: 0.62594974}
   m_EdgeRadius: 0
+--- !u!114 &2696392334829858192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4611817323651873410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.2116323, y: -0.08639403, z: 0}
+  - {x: -0.18043835, y: -0.16738302, z: 0}
+  - {x: -0.14481667, y: -0.20465402, z: 0}
+  - {x: -0.115132175, y: -0.23905793, z: 0}
+  - {x: -0.12106938, y: -0.31646633, z: 0}
+  - {x: -0.06466748, y: -0.3365354, z: 0}
+  - {x: -0.0052985004, y: -0.34226963, z: 0}
+  - {x: 0.027354589, y: -0.31933346, z: 0}
+  - {x: 0.071882084, y: -0.3279348, z: 0}
+  - {x: 0.12942904, y: -0.32909444, z: 0}
+  - {x: 0.15796694, y: -0.28206244, z: 0}
+  - {x: 0.13125107, y: -0.25052565, z: 0}
+  - {x: 0.16093555, y: -0.20465402, z: 0}
+  - {x: 0.22327313, y: -0.2247231, z: 0}
+  - {x: 0.26780063, y: -0.15591529, z: 0}
+  - {x: 0.27967504, y: -0.12437851, z: 0}
+  - {x: 0.32123393, y: -0.11291005, z: 0}
+  - {x: 0.38654009, y: -0.118644275, z: 0}
+  - {x: 0.40138158, y: -0.061304197, z: 0}
+  - {x: 0.31826532, y: -0.052703593, z: 0}
+  - {x: 0.2945165, y: 0.004636489, z: 0}
+  - {x: 0.21436885, y: 0.03904039, z: 0}
+  - {x: 0.21436885, y: -0.032634526, z: 0}
+  - {x: 0.13125107, y: -0.01543184, z: 0}
+  - {x: 0.10453517, y: 0.018971324, z: 0}
+  - {x: 0.113440976, y: 0.070577174, z: 0}
+  - {x: 0.11640806, y: 0.1164488, z: 0}
+  - {x: 0.11640806, y: 0.16232115, z: 0}
+  - {x: 0.11640806, y: 0.21679412, z: 0}
+  - {x: 0.11640806, y: 0.26839924, z: 0}
+  - {x: 0.06891348, y: 0.30280313, z: 0}
+  - {x: 0.009542981, y: 0.32860717, z: 0}
+  - {x: -0.082128406, y: 0.3189485, z: 0}
+  - {x: -0.1662525, y: 0.2923758, z: 0}
+  - {x: -0.21309145, y: 0.19672506, z: 0}
+  - {x: -0.21902865, y: 0.08491201, z: 0}
+  - {x: -0.15965967, y: 0.018971324, z: 0}
+  - {x: -0.18637556, y: -0.029767413, z: 0}
+  m_ShapePathHash: 338194544
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 43874

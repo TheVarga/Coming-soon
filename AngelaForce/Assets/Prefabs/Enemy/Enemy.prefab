@@ -431,10 +431,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   Health: 100
-  CollisionDamage: 1
+  CollisionDamage: 0.2
   projectile: {fileID: 1643732753453167665, guid: 8d9e6f35c37c57048a78add504902825, type: 3}
   shootingPoint: {fileID: 5516256885021839426}
-  TimeBetweenShots: 0.8
+  TimeBetweenShots: 1
   layermask:
     serializedVersion: 2
     m_Bits: 128
@@ -526,4 +526,4 @@ MonoBehaviour:
   - {x: -0.17907827, y: -0.19383465, z: 0}
   m_ShapePathHash: 320622944
   m_Mesh: {fileID: 0}
-  m_InstanceId: 45220
+  m_InstanceId: 81422
